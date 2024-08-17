@@ -23,6 +23,14 @@ app.get('/',async(req,res)=>{
 
 io.on("connection" ,(socket)=>{
     console.log("connected")
+
+    if(!players.white){
+        players.white = socket.id;
+        socket.emit("playerRole" , "w");
+    }else if(!players.black){
+        players.black = socket.id;
+        socket.emit("playerRol" , "w");
+    }
 })
 
 
