@@ -40,6 +40,7 @@ io.on("connection" ,(socket)=>{
         }else if(socket.id == players.black){
             delete players.black;
         }
+        io.emit("boardState", chess.fen());
     });
 
     socket.on("move",(move)=>{
