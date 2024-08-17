@@ -29,7 +29,7 @@ io.on("connection" ,(socket)=>{
         socket.emit("playerRole" , "w");
     }else if(!players.black){
         players.black = socket.id;
-        socket.emit("playerRol" , "w");
+        socket.emit("playerRole" , "b");
     }else{
         socket.emit("spectatorRole")
     }
